@@ -68,21 +68,18 @@ export const BeerFeed = ({
         ))}
       </div>
 
-      {/* Loading more indicator */}
       {isLoadingMore && (
         <div className="loading-more">
-          <p>🍻 Loading more beers...</p>
+          <p>🍻 Pouring more beers...</p>
         </div>
       )}
 
-      {/* End of results indicator */}
       {!hasMore && beers.length > 0 && (
         <div className="end-of-results">
-          <p>🎉 That's all the beers we have!</p>
+          <p> Tapped out! </p>
         </div>
       )}
 
-      {/* Infinite scroll sentinel */}
       {hasMore && !isLoadingMore && (
         <div ref={sentinelRef} className="scroll-sentinel" />
       )}
