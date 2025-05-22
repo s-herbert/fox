@@ -20,15 +20,7 @@ function App() {
   return (
     <div className="app">
       <header className="app-header">
-        <h1>🍺 Beer Explorer</h1>
-        {error && (
-          <button 
-            onClick={reset}
-            className="retry-button"
-          >
-            Retry
-          </button>
-        )}
+        <h1>🍺 Beer List</h1>
       </header>
 
       <main className="app-main">
@@ -46,6 +38,7 @@ function App() {
             hasMore={hasMore}
             onLoadMore={loadMore}
             onBeerSelect={handleBeerSelect}
+            reset={reset}
           />
         )}
       </main>

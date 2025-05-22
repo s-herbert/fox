@@ -10,6 +10,7 @@ interface BeerFeedProps {
   hasMore: boolean;
   onLoadMore: () => void;
   onBeerSelect: (beer: Beer) => void;
+  reset: () => void;
 }
 
 export const BeerFeed = ({
@@ -20,6 +21,7 @@ export const BeerFeed = ({
   hasMore,
   onLoadMore,
   onBeerSelect,
+  reset,
 }: BeerFeedProps) => {
   const { sentinelRef } = useInfiniteScroll({
     onLoadMore,
@@ -33,7 +35,14 @@ export const BeerFeed = ({
     return (
       <div className="beer-feed-error">
         <p>❌ {error}</p>
-        <p>Please try refreshing the page.</p>
+        {error && (
+          <button
+            onClick={reset}
+            className="retry-button"
+          >
+            Retry
+          </button>
+        )}
       </div>
     );
   }
