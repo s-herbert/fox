@@ -1,0 +1,213 @@
+.beer-detail {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.back-button {
+  background: #666;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  transition: background 0.2s ease;
+}
+
+.back-button:hover {
+  background: #555;
+}
+
+.beer-detail-content {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.beer-detail-header {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.beer-image-container {
+  flex-shrink: 0;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.beer-image {
+  max-width: 100%;
+  max-height: 300px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.beer-info {
+  flex: 1;
+}
+
+.beer-title {
+  margin: 0 0 1rem 0;
+  font-size: 2rem;
+  color: #333;
+  font-weight: 700;
+}
+
+.beer-tagline {
+  margin: 0 0 1.5rem 0;
+  font-size: 1.125rem;
+  color: #666;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.beer-abv {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.abv-label {
+  font-size: 1rem;
+  color: #888;
+  font-weight: 500;
+}
+
+.abv-value {
+  font-weight: 700;
+  color: #ffa500;
+  font-size: 1.25rem;
+}
+
+.beer-description {
+  padding: 2rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.beer-description h2 {
+  margin: 0 0 1rem 0;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.beer-description p {
+  margin: 0;
+  line-height: 1.6;
+  color: #555;
+  font-size: 1rem;
+}
+
+.beer-ingredients {
+  padding: 2rem;
+}
+
+.beer-ingredients h2 {
+  margin: 0 0 1.5rem 0;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.ingredient-section {
+  margin-bottom: 2rem;
+}
+
+.ingredient-section:last-child {
+  margin-bottom: 0;
+}
+
+.ingredient-section h3 {
+  margin: 0 0 1rem 0;
+  color: #ffa500;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.ingredient-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ingredient-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.ingredient-item:last-child {
+  border-bottom: none;
+}
+
+.ingredient-name {
+  font-weight: 600;
+  color: #333;
+  flex: 1;
+}
+
+.ingredient-amount {
+  font-weight: 500;
+  color: #666;
+  white-space: nowrap;
+}
+
+.ingredient-details {
+  color: #666;
+  text-align: right;
+  font-size: 0.9rem;
+}
+
+.hop-add,
+.hop-attribute {
+  color: #888;
+  font-size: 0.85rem;
+}
+
+.yeast-info {
+  margin: 0;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 6px;
+  color: #555;
+  font-style: italic;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .beer-detail {
+    padding: 1rem;
+  }
+
+  .beer-detail-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .beer-image-container {
+    width: 150px;
+  }
+
+  .beer-title {
+    font-size: 1.5rem;
+  }
+
+  .ingredient-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .ingredient-details {
+    text-align: left;
+  }
+}
