@@ -14,7 +14,7 @@ export const BeerDetail = ({ beer, onBack }: BeerDetailProps) => {
   return (
     <div className="beer-detail">
       <button onClick={onBack} className="back-button">
-        ← Back to Feed
+        ← Go Back
       </button>
 
       <div className="beer-detail-content">
