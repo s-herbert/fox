@@ -41,7 +41,7 @@ export const BeerFeed = ({
   if (isLoading && beers.length === 0) {
     return (
       <div className="beer-feed-loading">
-        <p>🍺 Loading delicious beers...</p>
+        <p>🍺 Pouring beers...</p>
       </div>
     );
   }
