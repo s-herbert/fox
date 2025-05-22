@@ -20,14 +20,14 @@ export const useScrollPosition = (): UseScrollPosition => {
     setSelectedBeer(null);
     // Restore scroll position, setTimeout to ensure DOM is finished rendering.
     setTimeout(() => {
-      window.scrollTo({ top: savedScrollPosition.current, behavior: 'smooth' });
+      window.scrollTo({ top: savedScrollPosition.current});
     }, 0);
   };
 
   // Scroll to top when detail view opens
   useEffect(() => {
     if (selectedBeer) {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.scrollTo({ top: 0});
     }
   }, [selectedBeer]);
 
