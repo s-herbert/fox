@@ -1,14 +1,10 @@
-import { useState, useEffect, useRef } from 'react';
 import { useBeerApi } from './hooks/useBeerApi';
 import { BeerFeed } from './components/BeerFeed';
 import { BeerDetail } from './components/BeerDetail';
-import type { Beer } from './types/beer';
 import './styles/App.css';
+import { useScrollPosition } from './hooks/useScrollPosition';
 
 function App() {
-  const [selectedBeer, setSelectedBeer] = useState<Beer | null>(null);
-  const savedScrollPosition = useRef<number>(0);
-  
   const {
     beers,
     isLoading,
@@ -19,26 +15,7 @@ function App() {
     reset,
   } = useBeerApi();
 
-  // Scroll to top when detail view opens
-  useEffect(() => {
-    if (selectedBeer) {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  }, [selectedBeer]);
-
-  const handleBeerSelect = (beer: Beer) => {
-    // Save current scroll position before navigating
-    savedScrollPosition.current = window.scrollY;
-    setSelectedBeer(beer);
-  };
-
-  const handleBackToFeed = () => {
-    setSelectedBeer(null);
-    // Restore scroll position, setTimeout to ensure DOM is finished rendering.
-    setTimeout(() => {
-      window.scrollTo({ top: savedScrollPosition.current, behavior: 'smooth' });
-    }, 0);
-  };
+  const {selectedBeer, handleBackToFeed, handleBeerSelect} = useScrollPosition();
 
   return (
     <div className="app">

@@ -1,7 +1,7 @@
 import { useState, useCallback, useRef, useEffect } from 'react';
 import type { Beer } from '../types/beer';
 
-interface UseBeerApiReturn {
+interface UseBeerApi {
   beers: Beer[];
   isLoading: boolean;
   isLoadingMore: boolean;
@@ -14,7 +14,7 @@ interface UseBeerApiReturn {
 const BEERS_PER_PAGE = 10;
 const BASE_URL = 'https://punkapi.online/v3/beers';
 
-export const useBeerApi = (): UseBeerApiReturn => {
+export const useBeerApi = (): UseBeerApi => {
   const [beers, setBeers] = useState<Beer[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isLoadingMore, setIsLoadingMore] = useState(false);
